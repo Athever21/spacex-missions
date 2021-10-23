@@ -1,12 +1,15 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { render } from "react-dom";
 import App from "./App";
-import MissionProvider from "./MissionProvider";
 import "./style.scss";
 
+const MissionProvider = lazy(() => import("@/MissionProvider"));
+
 render(
-  <MissionProvider>
-    <App />
-  </MissionProvider>,
+  <Suspense fallback={<></>}>
+    <MissionProvider>
+      <App />
+    </MissionProvider>
+  </Suspense>,
   document.getElementById("root")
 );

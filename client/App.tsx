@@ -2,10 +2,10 @@ import React, { lazy, Suspense } from "react";
 import { hot } from "react-hot-loader";
 import { useMission } from "@/MissionProvider";
 
-import Header from "@/components/Header";
 import Loading from "@/components/Loading";
 import { MissionContext } from "./models/models";
 
+const Header = lazy(() => import("@/components/Header"));
 const MissionList = lazy(() => import("@/components/Mission/MissionList"));
 const SingleMission = lazy(() => import("@/components/Mission/SingleMission"));
 
