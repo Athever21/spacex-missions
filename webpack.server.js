@@ -1,26 +1,30 @@
-const path = require('path');
+const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 const cwd = process.cwd();
 
 module.exports = {
   name: "server",
-  entry: [path.join(cwd,"server", "index.ts")],
-  externals: nodeExternals(),
+  entry: [path.join(cwd, "server", "index.ts")],
+  externals: [
+    nodeExternals({
+      allowlist: ["apollo-client", "apollo-link-http-common", "apollo-utilities", "graphql-tag"],
+    }),
+  ],
   output: {
     path: path.join(cwd, "build"),
     filename: "server.js",
-    publicPath: "/build/"
+    publicPath: "/build/",
   },
   module: {
     rules: [
       {
         test: /\.ts$/,
         use: "ts-loader",
-        exclude: /node_modules/
-      }
-    ]
+        exclude: /node_modules/,
+      },
+    ],
   },
   resolve: {
-    extensions: [".ts", ".js", ".json"]
-  }
-}
+    extensions: [".ts", ".js", ".json"],
+  },
+};
