@@ -1,0 +1,86 @@
+@mixin mission-item-border {
+  border: 1px dashed #636262;
+  border-radius: 10px;
+  background: #1f1f1f;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+
+.mission-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-item {
+  @include mission-item-border;
+
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+  padding: 0.5rem;
+}
+
+.mission-item:hover {
+  cursor: pointer;
+  background: rgba($color: #fff, $alpha: 0.1);
+}
+
+.mission-item-h2 {
+  font-size: 2.5rem;
+  margin-left: 1rem;
+}
+
+.mission-item-launch {
+  margin: 0.5rem;
+}
+
+.mission-item-info-name {
+  color: #a7a4a4;
+  margin-bottom: 0.2rem;
+}
+
+.mission-list-more {
+  @include mission-item-border;
+  padding: 1rem 0;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: #dfdfdf;
+  margin-bottom: 2rem;
+}
+
+.mission-list-more:hover {
+  cursor: pointer;
+  background: rgba($color: #fff, $alpha: 0.1);
+}
+
+@media screen and (max-width: 1042px) {
+  .mission-item-h2 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .mission-item-h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .mission-item {
+    flex-direction: column;
+  }
+
+  .mission-item-h2 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .mission-item-infos {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+  }
+}

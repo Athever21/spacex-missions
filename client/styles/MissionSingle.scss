@@ -1,0 +1,112 @@
+.single-mission {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.single-mission-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.single-mission-info-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.single-mission-info-title {
+  color: #a7a4a4;
+}
+
+.single-mission-launch {
+  cursor: default;
+}
+
+.single-mission-info-div {
+  margin: 0.5rem;
+}
+
+.single-mission-name {
+  font-size: 3rem;
+}
+
+.single-mission-rocket-info {
+  display: flex;
+  align-items: baseline;
+}
+
+.single-mission-status {
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.recovered {
+  background: #20817c;
+}
+
+.unrecovered {
+  background: #6b0a0a;
+}
+
+.single-mission-learn-more {
+  color: #dfdfdf;
+  border: 1px solid #dfdfdf;
+  background: #1f1f1f;
+  margin-top: 2rem;
+  text-decoration: none;
+  padding: 1rem;
+  width: 10rem;
+  text-align: center;
+}
+
+.single-mission-learn-more:hover {
+  background: rgba($color: #fff, $alpha: 0.1);
+}
+
+.mobileDate {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .single-mission-name {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .single-mission-name {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .single-mission-name {
+    font-size: 2rem;
+  }
+
+  .single-mission-info {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .single-mission-learn-more {
+    width: 100%;
+    margin: 2rem 0.5rem 0 0.5rem;
+  }
+
+  .single-mission-info-right {
+    margin-top: 1rem;
+    margin-bottom: -2rem;
+  }
+
+  .mobileDate {
+    display: block;
+  }
+
+  .normalDate {
+    display: none;
+  }
+}
